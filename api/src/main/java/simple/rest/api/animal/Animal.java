@@ -1,5 +1,6 @@
 package simple.rest.api.animal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class Animal {
     private Long id;
     private String species;
     @Getter
+    @JsonIgnore
     @Column(name = "updated_at")
     private Long updatedAt;
 

@@ -25,6 +25,7 @@ public class Car {
     private Long id;
     private String type;
     @Getter
+    @JsonIgnore
     @Column(name = "updated_at")
     private Long updatedAt;
 

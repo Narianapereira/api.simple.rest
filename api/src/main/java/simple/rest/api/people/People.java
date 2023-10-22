@@ -20,38 +20,17 @@ import java.sql.Timestamp;
 @EqualsAndHashCode(of = "id")
 public class People {
 
+    @Getter
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @JsonIgnore
     @Column(name = "updated_at")
     private Long updatedAt;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Long updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 
     public People(String data) {
         this.name = data;
+        this.updatedAt = System.currentTimeMillis();
     }
-
 }
